@@ -6,7 +6,7 @@
 
 ### .prettier文件配置
 
-```json
+```
 {
   "tabWidth": 2, // tab缩进大小
   "printWidth": 300,  //每行最多多少个字符换行
