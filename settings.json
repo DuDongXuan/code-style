@@ -1,6 +1,6 @@
 {
   "workbench.colorTheme": "Atom One Dark",
-  "workbench.editor.tabCloseButton": "left",
+  "workbench.editor.tabCloseButton": "right", // 选项卡关闭按钮的位置
   "workbench.iconTheme": "vscode-icons",
   "workbench.list.smoothScrolling": true,
   "workbench.startupEditor": "newUntitledFile",
@@ -89,10 +89,8 @@
   // 扩展配置
   "emmet.showSuggestionsAsSnippets": true,
   "emmet.triggerExpansionOnTab": false,
-  "errorLens.enabledDiagnosticLevels": ["warning", "error"],
-  "errorLens.excludeBySource": ["cSpell", "Grammarly", "eslint"],
 
-  // ESLint 配置: https://github.com/antfu/eslint-config
+  // eslit配置
   "eslint.codeAction.showDocumentation": {
     "enable": true
   },
@@ -103,71 +101,16 @@
       "severity": "off"
     }
   ],
-  "eslint.validate": ["javascript", "typescript", "javascriptreact", "typescriptreact", "vue", "html", "markdown", "json", "jsonc", "json5"],
-
+  // 对哪些文件进行校验
+  "eslint.validate": ["javascript", "typescript", "javascriptreact", "typescriptreact", "vue", "html"],
+  // 在环境中启用 github copilot
   "github.copilot.enable": {
     "*": true,
     "markdown": true,
     "plaintext": false,
     "yaml": false
   },
-  "cSpell.allowCompoundWords": true,
-  "cSpell.language": "en,en-US",
   "css.lint.hexColorLength": "ignore",
-  "githubIssues.workingIssueFormatScm": "#${issueNumberLabel}",
-  "githubPullRequests.fileListLayout": "tree",
-  "gitlens.codeLens.authors.enabled": false,
-  "gitlens.codeLens.enabled": false,
-  "gitlens.codeLens.recentChange.enabled": false,
-  "gitlens.menus": {
-    "editor": {
-      "blame": false,
-      "clipboard": true,
-      "compare": true,
-      "history": false,
-      "remote": false
-    },
-    "editorGroup": {
-      "blame": true,
-      "compare": false
-    },
-    "editorTab": {
-      "clipboard": true,
-      "compare": true,
-      "history": true,
-      "remote": true
-    },
-    "explorer": {
-      "clipboard": true,
-      "compare": true,
-      "history": true,
-      "remote": true
-    },
-    "scm": {
-      "authors": true
-    },
-    "scmGroup": {
-      "compare": true,
-      "openClose": true,
-      "stash": true
-    },
-    "scmGroupInline": {
-      "stash": true
-    },
-    "scmItem": {
-      "clipboard": true,
-      "compare": true,
-      "history": true,
-      "remote": false,
-      "stash": true
-    }
-  },
-  "i18n-ally.autoDetection": false,
-  "i18n-ally.displayLanguage": "en",
-  "i18n-ally.ignoredLocales": [],
-  "iconify.annotations": true,
-  "iconify.inplace": true,
-  "svg.preview.mode": "svg",
 
   // prettier
   "prettier.printWidth": 300,
@@ -176,17 +119,17 @@
   "prettier.trailingComma": "none", // 格式化时末尾不添加逗号
   "prettier.bracketSpacing": true, // 函数名字后不添加空格
 
-  // 文件头部注释 不使用
+  // 文件头部注释
   "fileheader.configObj": {
     "autoAdd": false // 开启该选项之后，插件会检测当前保存的文件有没有头部注释，如果没有的话，将为自动添加头部注释
   },
   "fileheader.customMade": {
-    "Author": "git config user.name && git config user.email", // 同时获取用户名与邮箱
-    "Date": "Do not edit", // 文件创建时间(不变)
-    "LastEditors": "git config user.name && git config user.email", // 文件最后编辑者 与Author字段一致
-    "LastEditTime": "Do not edit", // 文件最后编辑时间
-    "FilePath": "Do not edit", // 文件在项目中的相对路径 自动更新
-    "Description": "" // 介绍文件的作用、文件的入参、出参
+    "Description": "", // 介绍文件的作用、文件的入参、出参
+    "Author": "杜东轩" // 同时获取用户名与邮箱
+    // "Date": "Do not edit", // 文件创建时间(不变)
+    // "LastEditTime": "Do not edit", // 文件最后编辑时间
+    // "LastEditors": "git config user.name && git config user.email" // 文件最后编辑者 与Author字段一致
+    // "FilePath": "Do not edit", // 文件在项目中的相对路径 自动更新
   },
   // 不填写对应属性即关闭对应功能
 
@@ -286,9 +229,20 @@
   },
   "prettier.bracketSameLine": true,
   "[markdown]": {
-    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  /*配置js*/
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true, //  #让函数(名)和后面的括号之间加个空格
+  "javascript.format.insertSpaceAfterConstructor": true, // 在构造函数和括号之间加空格
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": true,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
+  "javascript.format.insertSpaceAfterSemicolonInForStatements": true,
+  "javascript.format.insertSpaceBeforeAndAfterBinaryOperators": true // 在二进制运算符之后定义空间处理。
 }
